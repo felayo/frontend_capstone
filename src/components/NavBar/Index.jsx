@@ -14,17 +14,6 @@ import {
 import logo from "../../Assets/img/logo.png";
 import DrawerCom from "./DrawerCom";
 
-function LinkTab(props) {
-  return (
-    <Tab
-      component="a"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-      {...props}
-    />
-  );
-}
 
 const Index = ({ links }) => {
   const theme = useTheme();
@@ -62,14 +51,41 @@ const Index = ({ links }) => {
                     textColor="secondary"
                     indicatorColor="secondary"
                     aria-label="nav tabs">
-                    {links.map((link, index) => (
-                      <LinkTab
-                        sx={{ textTransform: "capitalize" }}
-                        key={index}
-                        label={link}
-                        href="/"
-                      />
-                    ))}
+                    <Tab
+                      sx={{ textTransform: "capitalize" }}
+                      label="Home"
+                      href="/"
+                    />
+                    <Tab
+                      sx={{ textTransform: "capitalize" }}
+                      label="About"
+                      href="/about"
+                    />
+                    <Tab
+                      sx={{ textTransform: "capitalize" }}
+                      label="Menu"
+                      href="/menu"
+                    />
+                    <Tab
+                      sx={{ textTransform: "capitalize" }}
+                      label="Reservations"
+                      href="/bookings"
+                    />
+                    <Tab
+                      sx={{ textTransform: "capitalize" }}
+                      label="Order Online"
+                      href="/order"
+                    />
+                    <Tab
+                      sx={{ textTransform: "capitalize" }}
+                      label="Contact"
+                      href="/contact"
+                    />
+                    <Tab
+                      sx={{ textTransform: "capitalize" }}
+                      label="Login"
+                      href="/login"
+                    />
                   </Tabs>
                 </Box>
               </Grid>

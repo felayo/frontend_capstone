@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography, Container, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import RestaurantImage from "../../Assets/img/restauranfood.jpg";
 
 const Hero = () => {
@@ -24,19 +25,26 @@ const Hero = () => {
               Maxime mollitia, molestiae quas vel sint commodi <br />{" "}
               repudiandae consequuntur voluptatum laborum numquam
             </Typography>
-            <Button
-              sx={{ marginTop: 4, backgroundColor: "#f4ce14", color: "#333" }}
-              variant="contained"
-              href="#contained-buttons">
-              Reserve a table
-            </Button>
+            <Link to="/bookings" style={{textDecoration: "none"}}>
+              <Button
+                sx={{ marginTop: 4, backgroundColor: "#f4ce14", color: "#333"}}
+                variant="contained">
+                Reserve a table
+              </Button>
+            </Link>
           </Grid>
           <Grid item xs={6} display="flex" justifyContent="flex-end">
             <Box
               component="img"
               src={RestaurantImage}
               alt="restaurant"
-              sx={{ height: 300, width: 300, position: "absolute", top: "100px", borderRadius: '5%' }}></Box>
+              sx={{
+                height: 300,
+                width: 300,
+                position: "absolute",
+                top: "100px",
+                borderRadius: "5%",
+              }}></Box>
           </Grid>
         </Grid>
       </Container>
